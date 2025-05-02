@@ -1,6 +1,0 @@
-pandas
-fredapi
-requests
-beautifulsoup4
-openpyxl
-black
