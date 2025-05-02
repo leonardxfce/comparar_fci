@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Comparativa de Fondos de Inversi&oacute;n
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js">
+  </script>
+ </head>
+ <body>
+  <main class="container">
+   <div class="row mb-2">
+    <h1 class="display-5 font-bold text-center">
+     📊 Comparativa de TOP Fondos de Inversi&oacute;n
+    </h1>
+    <p class="lead text-center">
+     Observa el rendimiento reciente de diferentes categor&iacute;as de
+          fondos.
+    </p>
+   </div>
+   <div class="row">
+    <div class="col">
+     <canvas height="150" id="myHorizontalBarChart0">
+     </canvas>
+    </div>
+    <div class="col">
+     <canvas id="myHorizontalBarChart1">
+     </canvas>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col">
+     <canvas id="myHorizontalBarChart2">
+     </canvas>
+    </div>
+    <div class="col">
+     <canvas id="myHorizontalBarChart3">
+     </canvas>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col">
+     <canvas id="myHorizontalBarChart4">
+     </canvas>
+    </div>
+    <div class="col">
+     <canvas id="myHorizontalBarChart5">
+     </canvas>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col">
+     <canvas id="myHorizontalBarChart6">
+     </canvas>
+    </div>
+    <div class="col">
+     <canvas id="myHorizontalBarChart7">
+     </canvas>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col">
+     <canvas id="myHorizontalBarChart8">
+     </canvas>
+    </div>
+    <div class="col">
+     <canvas id="myHorizontalBarChart9">
+     </canvas>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col">
+     <canvas id="myHorizontalBarChart10">
+     </canvas>
+    </div>
+    <div class="col">
+     <canvas id="myHorizontalBarChart11">
+     </canvas>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col">
+     <canvas id="myHorizontalBarChart12">
+     </canvas>
+    </div>
+    <div class="col">
+     <canvas id="myHorizontalBarChart13">
+     </canvas>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col">
+     <canvas id="myHorizontalBarChart14">
+     </canvas>
+    </div>
+    <div class="col">
+     <canvas id="myHorizontalBarChart15">
+     </canvas>
+    </div>
+   </div>
+  </main>
+  <div class="container text-center">
+   <p>
+    Datos al d&iacute;a de la &uacute;ltima actualizaci&oacute;n. La
+        informaci&oacute;n no constituye asesoramiento financiero.
+   </p>
+  </div>
+  <script defer src="index.js">
+  </script>
+  <script class="fci_data" id="data_base" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "SBS Patrimonio III - Clase B",
+    "Variac. %": 0.37,
+    "30/12/24": null,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Wise Capital Saving - Clase B",
+    "Variac. %": 0.365,
+    "30/12/24": 9.475,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Wise Capital Saving - Clase C",
+    "Variac. %": 0.362,
+    "30/12/24": null,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Wise Capital Saving - Clase A",
+    "Variac. %": 0.362,
+    "30/12/24": 9.209,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Delta Gestion IV - Clase I",
+    "Variac. %": 0.224,
+    "30/12/24": -0.776,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Argenfunds Renta Fija II - Clase B",
+    "Variac. %": 0.219,
+    "30/12/24": 9.227,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Balanceado - Clase B",
+    "Variac. %": 0.174,
+    "30/12/24": 11.636,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 6,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Balanceado - Clase Ley Nº 27.743",
+    "Variac. %": 0.171,
+    "30/12/24": 11.162,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 6,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Balanceado - Clase A",
+    "Variac. %": 0.171,
+    "30/12/24": 11.163,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 6,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Max Dinamico I - Clase D",
+    "Variac. %": 0.133,
+    "30/12/24": 12.639,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_usd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Cocos Ahorro Dólares - Clase A",
+    "Variac. %": 0.01,
+    "30/12/24": 1.588,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase E",
+    "Variac. %": 0.009,
+    "30/12/24": 0.894,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase D",
+    "Variac. %": 0.009,
+    "30/12/24": 0.877,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase C",
+    "Variac. %": 0.009,
+    "30/12/24": 0.901,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase Ley Nº 27.743",
+    "Variac. %": 0.009,
+    "30/12/24": 0.877,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase F",
+    "Variac. %": 0.009,
+    "30/12/24": 0.894,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase B",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Retorno Dólares - Clase C",
+    "Variac. %": 0.008,
+    "30/12/24": null,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase Ley Nº 27.743",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase C",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_mm" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase H",
+    "Variac. %": 0.11,
+    "30/12/24": 10.881,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase I",
+    "Variac. %": 0.11,
+    "30/12/24": 10.881,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase G",
+    "Variac. %": 0.11,
+    "30/12/24": 10.881,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase B",
+    "Variac. %": 0.104,
+    "30/12/24": 10.129,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase A",
+    "Variac. %": 0.101,
+    "30/12/24": 9.782,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Champaquí Fondo Inmediato Plus - Clase D",
+    "Variac. %": 0.089,
+    "30/12/24": 10.151,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000000000
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dinámico Fondo de Dinero - Clase C",
+    "Variac. %": 0.089,
+    "30/12/24": 11.12,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Champaquí Fondo Inmediato Plus - Clase B",
+    "Variac. %": 0.088,
+    "30/12/24": 10.052,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dinámico Fondo de Dinero - Clase B",
+    "Variac. %": 0.085,
+    "30/12/24": 10.589,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Champaquí Fondo Inmediato Plus - Clase A",
+    "Variac. %": 0.085,
+    "30/12/24": 9.636,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  }
+]
+  </script>
+  <script class="fci_data" id="data_mm_usd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase C",
+    "Variac. %": 0.009,
+    "30/12/24": 0.901,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase Ley Nº 27.743",
+    "Variac. %": 0.009,
+    "30/12/24": 0.877,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase D",
+    "Variac. %": 0.009,
+    "30/12/24": 0.877,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase E",
+    "Variac. %": 0.009,
+    "30/12/24": 0.894,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase F",
+    "Variac. %": 0.009,
+    "30/12/24": 0.894,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase Ley Nº 27.743",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase C",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase B",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase A",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Retorno Dólares - Clase C",
+    "Variac. %": 0.008,
+    "30/12/24": null,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_ytd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "ST Gestion IV - Clase C",
+    "Variac. %": 0.042,
+    "30/12/24": 14.473,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 500000000
+  },
+  {
+    "Fondo_Fondo": "ST Gestion IV - Clase A",
+    "Variac. %": 0.041,
+    "30/12/24": 14.473,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 500000000
+  },
+  {
+    "Fondo_Fondo": "ST Gestion IV - Clase B",
+    "Variac. %": 0.04,
+    "30/12/24": 13.812,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Max Dinamico I - Clase D",
+    "Variac. %": 0.133,
+    "30/12/24": 12.639,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Cocos Daruma Renta Mixta - Clase A",
+    "Variac. %": 0.095,
+    "30/12/24": 11.683,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Balanceado - Clase B",
+    "Variac. %": 0.174,
+    "30/12/24": 11.636,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 6,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Max Dinamico II - Clase D",
+    "Variac. %": 0.104,
+    "30/12/24": 11.617,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Allaria Dinámico III - Clase C",
+    "Variac. %": 0.122,
+    "30/12/24": 11.584,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Toronto Trust Special Opportunities",
+    "Variac. %": -0.173,
+    "30/12/24": 11.505,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Allaria Dinámico III - Clase B",
+    "Variac. %": 0.122,
+    "30/12/24": 11.499,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_ytd_usd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Cocos Ahorro Dólares - Clase A",
+    "Variac. %": 0.01,
+    "30/12/24": 1.588,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase C",
+    "Variac. %": 0.009,
+    "30/12/24": 0.901,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase E",
+    "Variac. %": 0.009,
+    "30/12/24": 0.894,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase F",
+    "Variac. %": 0.009,
+    "30/12/24": 0.894,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase D",
+    "Variac. %": 0.009,
+    "30/12/24": 0.877,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase Ley Nº 27.743",
+    "Variac. %": 0.009,
+    "30/12/24": 0.877,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase A",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase Ley Nº 27.743",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase C",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase B",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_ytd_mm" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dinámico Fondo de Dinero - Clase C",
+    "Variac. %": 0.089,
+    "30/12/24": 11.12,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase G",
+    "Variac. %": 0.11,
+    "30/12/24": 10.881,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase H",
+    "Variac. %": 0.11,
+    "30/12/24": 10.881,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase I",
+    "Variac. %": 0.11,
+    "30/12/24": 10.881,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dinámico Fondo de Dinero - Clase B",
+    "Variac. %": 0.085,
+    "30/12/24": 10.589,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Ualintec Ahorro Pesos - Clase C",
+    "Variac. %": 0.078,
+    "30/12/24": 10.16,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Ualintec Ahorro Pesos - Clase B",
+    "Variac. %": 0.078,
+    "30/12/24": 10.16,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Valiant Ahorro - Clase A",
+    "Variac. %": 0.074,
+    "30/12/24": 10.151,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Champaquí Fondo Inmediato Plus - Clase D",
+    "Variac. %": 0.089,
+    "30/12/24": 10.151,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000000000
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase B",
+    "Variac. %": 0.104,
+    "30/12/24": 10.129,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  }
+]
+  </script>
+  <script class="fci_data" id="data_ytd_mm_usd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase C",
+    "Variac. %": 0.009,
+    "30/12/24": 0.901,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase E",
+    "Variac. %": 0.009,
+    "30/12/24": 0.894,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase F",
+    "Variac. %": 0.009,
+    "30/12/24": 0.894,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase D",
+    "Variac. %": 0.009,
+    "30/12/24": 0.877,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dólares - Clase Ley Nº 27.743",
+    "Variac. %": 0.009,
+    "30/12/24": 0.877,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase A",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase Ley Nº 27.743",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase C",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase B",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Liquidez Dólar - Clase B",
+    "Variac. %": 0.006,
+    "30/12/24": 0.666,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_sa" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Wise Capital Saving - Clase A",
+    "Variac. %": 0.362,
+    "30/12/24": 9.209,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Balanceado - Clase A",
+    "Variac. %": 0.171,
+    "30/12/24": 11.163,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 6,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Allaria Dinámico III - Clase A",
+    "Variac. %": 0.121,
+    "30/12/24": 11.407,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase A",
+    "Variac. %": 0.101,
+    "30/12/24": 9.782,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Max Dinamico II - Clase A",
+    "Variac. %": 0.098,
+    "30/12/24": 10.785,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Cocos Daruma Renta Mixta - Clase A",
+    "Variac. %": 0.095,
+    "30/12/24": 11.683,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Champaquí Fondo Inmediato Plus - Clase A",
+    "Variac. %": 0.085,
+    "30/12/24": 9.636,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dinámico Fondo de Dinero - Clase A",
+    "Variac. %": 0.081,
+    "30/12/24": 10.049,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "1822 Raices Cobertura - Clase A",
+    "Variac. %": 0.079,
+    "30/12/24": 7.112,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Chaco FCI Money Market - Clase A",
+    "Variac. %": 0.079,
+    "30/12/24": 9.663,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  }
+]
+  </script>
+  <script class="fci_data" id="data_sa_usd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Cocos Ahorro Dólares - Clase A",
+    "Variac. %": 0.01,
+    "30/12/24": 1.588,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase A",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Retorno Dólares - Clase A",
+    "Variac. %": 0.007,
+    "30/12/24": 0.556,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Argenfunds Liquidez Dólares - Clase A",
+    "Variac. %": 0.007,
+    "30/12/24": null,
+    "Moneda Fondo_Moneda Fondo": "USB",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IEB Corto Plazo Dólar - Clase A",
+    "Variac. %": 0.007,
+    "30/12/24": null,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "SBS Liquidez USD - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.561,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Balanz Money Market USD - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.524,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 100
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Liquidez Dólar - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.649,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "BAVSA Ahorro Dólar - Clase A",
+    "Variac. %": 0.005,
+    "30/12/24": 0.07,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Allaria Dólar Ahorro - Clase A",
+    "Variac. %": 0.004,
+    "30/12/24": 0.563,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_sa_mm" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase A",
+    "Variac. %": 0.101,
+    "30/12/24": 9.782,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Champaquí Fondo Inmediato Plus - Clase A",
+    "Variac. %": 0.085,
+    "30/12/24": 9.636,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dinámico Fondo de Dinero - Clase A",
+    "Variac. %": 0.081,
+    "30/12/24": 10.049,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Chaco FCI Money Market - Clase A",
+    "Variac. %": 0.079,
+    "30/12/24": 9.663,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "MAF Liquidez - Clase A",
+    "Variac. %": 0.077,
+    "30/12/24": 10.08,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 4999
+  },
+  {
+    "Fondo_Fondo": "Balanz Capital Money Market - Clase A",
+    "Variac. %": 0.076,
+    "30/12/24": 9.356,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Ualintec Ahorro Pesos - Clase A",
+    "Variac. %": 0.076,
+    "30/12/24": 9.886,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Mercado Fondo - Clase A",
+    "Variac. %": 0.075,
+    "30/12/24": 9.724,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 2
+  },
+  {
+    "Fondo_Fondo": "Pellegrini Renta Pesos - Clase A",
+    "Variac. %": 0.074,
+    "30/12/24": 9.601,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Valiant Ahorro - Clase A",
+    "Variac. %": 0.074,
+    "30/12/24": 10.151,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_sa_mm_usd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase A",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Retorno Dólares - Clase A",
+    "Variac. %": 0.007,
+    "30/12/24": 0.556,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IEB Corto Plazo Dólar - Clase A",
+    "Variac. %": 0.007,
+    "30/12/24": null,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "SBS Liquidez USD - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.561,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Balanz Money Market USD - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.524,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 100
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Liquidez Dólar - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.649,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "BAVSA Ahorro Dólar - Clase A",
+    "Variac. %": 0.005,
+    "30/12/24": 0.07,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Allaria Dólar Ahorro - Clase A",
+    "Variac. %": 0.004,
+    "30/12/24": 0.563,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Delta Dólares - Clase A",
+    "Variac. %": 0.004,
+    "30/12/24": 0.549,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Pellegrini Money Market USD - Clase A",
+    "Variac. %": 0.004,
+    "30/12/24": null,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 100
+  }
+]
+  </script>
+  <script class="fci_data" id="data_sa_ytd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "ST Gestion IV - Clase A",
+    "Variac. %": 0.041,
+    "30/12/24": 14.473,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 500000000
+  },
+  {
+    "Fondo_Fondo": "Cocos Daruma Renta Mixta - Clase A",
+    "Variac. %": 0.095,
+    "30/12/24": 11.683,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 4,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Toronto Trust Special Opportunities",
+    "Variac. %": -0.173,
+    "30/12/24": 11.505,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Allaria Dinámico III - Clase A",
+    "Variac. %": 0.121,
+    "30/12/24": 11.407,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Balanceado - Clase A",
+    "Variac. %": 0.171,
+    "30/12/24": 11.163,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 6,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Argenfunds Renta Mixta - Clase A",
+    "Variac. %": 0.061,
+    "30/12/24": 10.917,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Max Dinamico II - Clase A",
+    "Variac. %": 0.098,
+    "30/12/24": 10.785,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "SBS Pesos Plus - Clase A",
+    "Variac. %": 0.047,
+    "30/12/24": 10.759,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 50
+  },
+  {
+    "Fondo_Fondo": "Delta Performance - Clase A",
+    "Variac. %": -0.002,
+    "30/12/24": 10.164,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 10,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Valiant Ahorro - Clase A",
+    "Variac. %": 0.074,
+    "30/12/24": 10.151,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_sa_ytd_usd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Cocos Ahorro Dólares - Clase A",
+    "Variac. %": 0.01,
+    "30/12/24": 1.588,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 2,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase A",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Liquidez Dólar - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.649,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Allaria Dólar Ahorro - Clase A",
+    "Variac. %": 0.004,
+    "30/12/24": 0.563,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "SBS Liquidez USD - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.561,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Retorno Dólares - Clase A",
+    "Variac. %": 0.007,
+    "30/12/24": 0.556,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Delta Dólares - Clase A",
+    "Variac. %": 0.004,
+    "30/12/24": 0.549,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Balanz Money Market USD - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.524,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 100
+  },
+  {
+    "Fondo_Fondo": "Toronto Trust Money Market Dólar - Clase A",
+    "Variac. %": 0.003,
+    "30/12/24": 0.409,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "BAVSA Ahorro Dólar - Clase A",
+    "Variac. %": 0.005,
+    "30/12/24": 0.07,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script class="fci_data" id="data_sa_ytd_mm" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "Valiant Ahorro - Clase A",
+    "Variac. %": 0.074,
+    "30/12/24": 10.151,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MAF Liquidez - Clase A",
+    "Variac. %": 0.077,
+    "30/12/24": 10.08,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 4999
+  },
+  {
+    "Fondo_Fondo": "Adcap Ahorro Dinámico Fondo de Dinero - Clase A",
+    "Variac. %": 0.081,
+    "30/12/24": 10.049,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Lombard Renta en Pesos",
+    "Variac. %": 0.071,
+    "30/12/24": 9.895,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Ualintec Ahorro Pesos - Clase A",
+    "Variac. %": 0.076,
+    "30/12/24": 9.886,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Super Ahorro Plus - Clase A",
+    "Variac. %": 0.101,
+    "30/12/24": 9.782,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Mercado Fondo - Clase A",
+    "Variac. %": 0.075,
+    "30/12/24": 9.724,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 2
+  },
+  {
+    "Fondo_Fondo": "Chaco FCI Money Market - Clase A",
+    "Variac. %": 0.079,
+    "30/12/24": 9.663,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Champaquí Fondo Inmediato Plus - Clase A",
+    "Variac. %": 0.085,
+    "30/12/24": 9.636,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1000
+  },
+  {
+    "Fondo_Fondo": "Transatlantica Liquidez Pesos - Clase A",
+    "Variac. %": 0.07,
+    "30/12/24": 9.613,
+    "Moneda Fondo_Moneda Fondo": "ARS",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 999
+  }
+]
+  </script>
+  <script class="fci_data" id="data_sa_ytd_mm_usd" type="application/json">
+   [
+  {
+    "Fondo_Fondo": "IAM Liquidez en Dólares - Clase A",
+    "Variac. %": 0.008,
+    "30/12/24": 0.673,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "MEGAQM Liquidez Dólar - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.649,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Allaria Dólar Ahorro - Clase A",
+    "Variac. %": 0.004,
+    "30/12/24": 0.563,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "SBS Liquidez USD - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.561,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "IAM Retorno Dólares - Clase A",
+    "Variac. %": 0.007,
+    "30/12/24": 0.556,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Delta Dólares - Clase A",
+    "Variac. %": 0.004,
+    "30/12/24": 0.549,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "Balanz Money Market USD - Clase A",
+    "Variac. %": 0.006,
+    "30/12/24": 0.524,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 100
+  },
+  {
+    "Fondo_Fondo": "Toronto Trust Money Market Dólar - Clase A",
+    "Variac. %": 0.003,
+    "30/12/24": 0.409,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  },
+  {
+    "Fondo_Fondo": "BAVSA Ahorro Dólar - Clase A",
+    "Variac. %": 0.005,
+    "30/12/24": 0.07,
+    "Moneda Fondo_Moneda Fondo": "USD",
+    "Código de Clasificación_Código de Clasificación": 3,
+    "Mínimo de Inversión_Mínimo de Inversión": 1
+  }
+]
+  </script>
+  <script id="benchmarkGarantizado" type="application/json">
+   [
+  {
+    "nombre": "Cuenta Remunerada Banco Bica 30% TNA",
+    "monto_inicial_recomendado": 490720.0,
+    "rendimiento_mejor_%": 0.063,
+    "rendimiento_topeado_%": 0.062
+  },
+  {
+    "nombre": "Cuenta Remunerada NaranjaX 31% TNA",
+    "monto_inicial_recomendado": 582687.0,
+    "rendimiento_mejor_%": 0.099,
+    "rendimiento_topeado_%": 0.098
+  },
+  {
+    "nombre": "Cuenta Remunerada Uala 35% TNA",
+    "monto_inicial_recomendado": 967024.0,
+    "rendimiento_mejor_%": 0.114,
+    "rendimiento_topeado_%": 0.112
+  },
+  {
+    "nombre": "Cuenta Remunerada IOL 2% TNA",
+    "monto_inicial_recomendado": 998342.0,
+    "rendimiento_mejor_%": 0.006,
+    "rendimiento_topeado_%": 0.006
+  },
+  {
+    "nombre": "Cuenta Remunerada Uala Base 30% TNA",
+    "monto_inicial_recomendado": 971895.0,
+    "rendimiento_mejor_%": 0.096,
+    "rendimiento_topeado_%": 0.095
+  }
+]
+  </script>
+  <script id="datosFinancieros" type="application/json">
+   {
+  "calculation_date": "2025-05-02",
+  "days_elapsed_current_year": 122,
+  "reference_date_yesterday": "2025-05-01",
+  "reference_date_start_year_api": "2024-12-31",
+  "inflacion_usa_ytd_%": 0.633,
+  "inflacion_uva": {
+    "ytd_%": 10.8,
+    "anualizada_estimada_%": 32.3
+  },
+  "variacion_dolar_bolsa_compra_ytd_%": 1.06
+}
+  </script>
+ </body>
+</html>
