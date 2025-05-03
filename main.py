@@ -12,6 +12,9 @@ try:
         get_argentina_financial_indicators,
         process_raw_xlsx_to_tsv,
         PLAZO_LIQ_CERO,
+        download_cafci_xlsx,
+        actualizar_plazo_liquidacion_fci,
+        fix_missing_t0,
     )
 except ImportError:
     print(
@@ -197,7 +200,7 @@ def generate_fci_json_for_combination(filter_clase_a, use_ytd, filter_mm, filter
     df = load_prepared_fci_data(filter_clase_a=filter_clase_a)
     if df.empty:
         return json.dumps([])  # Return empty list if loading failed
-
+    df = fix_missing_t0(df)
     # Apply mandatory Plazo Liq = 0 filter (based on original script structure)
     df = filter_by_plazo_liq(df, plazos_allowed={PLAZO_LIQ_CERO})
 
@@ -344,5 +347,6 @@ def update_html_with_json_data(html_path=HTML_FILENAME):
 
 if __name__ == "__main__":
     print("Starting HTML update process...")
+    download_cafci_xlsx()
     update_html_with_json_data()
     print("HTML update process finished.")

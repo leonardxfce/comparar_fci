@@ -1,9 +1,14 @@
-import pandas as pd
 import datetime
+import functools
+import logging
+
 from fredapi import Fred
+import os
+import time
 import requests
 import json
-import os
+import pandas as pd
+
 
 # --- Configuration & Constants ---
 
@@ -135,7 +140,6 @@ def load_prepared_fci_data(
         if apply_plazo_zero_mods:
             mask_modificar = df.iloc[:, 0].isin(FONDOS_PLAZO_CERO_MODIFICAR)
             df.loc[mask_modificar, COL_PLAZO_LIQ] = 0  # Assuming 0 should be numeric
-
         if filter_clase_a:
             condicion_clase_a = (
                 df[COL_FONDO].str.contains(CLASE_GENERIC_STR, na=False)
@@ -451,3 +455,83 @@ def get_argentina_financial_indicators():
         results["general_error"] = str(e)
 
     return results
+
+
+def download_cafci_xlsx(output_filename="fci.xlsx"):
+    unix_timestamp = int(time.time())
+    base_url = "https://api.cafci.org.ar/pb_get"
+    url = f"{base_url}?d={unix_timestamp}"
+
+    print(f"Intentando descargar desde: {url}")
+
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()  # Lanza un HTTPError para respuestas de error (4xx o 5xx)
+        with open(output_filename, "wb") as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                if chunk:
+                    f.write(chunk)
+        print(f"Archivo descargado exitosamente y guardado como {output_filename}")
+        return True
+    except requests.exceptions.RequestException as e:
+        print(f"Error durante la solicitud: {e}")
+        return False
+    except Exception as e:
+        print(f"Ocurrió un error inesperado: {e}")
+        return False
+
+@functools.cache
+def actualizar_plazo_liquidacion_fci():
+    print("Consultando PPI para arreglar T+0")
+    url = "https://api.portfoliopersonal.com/api/Cotizaciones/FCI/Obtener"
+    payload = {
+        "tipo": 160,
+        "categoria": [17, 4],
+        "familia": [],
+        "riesgo": [],
+        "plazoRescate": [],
+        "permanenciaSugerida": [],
+        "moneda": [],
+        "patrimonio": [],
+        "benchmark": [],
+    }
+
+    headers = {
+        "accept": "application/json, text/plain, */*",
+        "accept-language": "en-US,en;q=0.9,es-AR;q=0.8,es;q=0.7",
+        "authorizedclient": "321321321",
+        "cache-control": "no-cache",
+        "clientkey": "pp123456",
+        "content-type": "application/json",
+    }
+
+    isins_from_api = []
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+
+        if data and data.get("status") == 0 and isinstance(data.get("payload"), list):
+            for item_data in data.get("payload", []):
+                isin = item_data.get("item", {}).get("isin")
+                if isin:
+                    isins_from_api.append(isin)
+
+    except requests.exceptions.RequestException as e:
+        logging.error(e)
+
+    return isins_from_api
+
+
+def fix_missing_t0(df):
+    isins_from_api = actualizar_plazo_liquidacion_fci()
+    if (
+        isins_from_api
+        and "Código CAFCI_Código CAFCI" in df.columns
+        and "Plazo Liq._Plazo Liq." in df.columns
+    ):
+        rows_to_update = (
+            df["Código CAFCI_Código CAFCI"].astype(str).isin(isins_from_api)
+        )
+        df.loc[rows_to_update, "Plazo Liq._Plazo Liq."] = 0
+    return df

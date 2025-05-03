@@ -100,6 +100,12 @@ function getChartData(labels, dataValues, colors) {
   };
 }
 
+function extracted(dataArray) {
+  const x = dataArray.every((i) => i[DATA_KEYS.FUND_NAME].includes("Clase A"));
+  const tipo = x ? "PARA PERSONAS" : "TODOS LOS FCI";
+  return tipo;
+}
+
 function crearDashboardHorizontalBarras(dataArray, index, isYTd, tipo) {
   const callbackfn3 = (item) => item[DATA_KEYS.FUND_NAME];
   const labels = dataArray.map(callbackfn3);
@@ -144,7 +150,7 @@ async function init() {
   const callbackfn2 = (scriptTag, index) => {
     try {
       let rawFunds = JSON.parse(scriptTag.innerHTML);
-      const tipo = x ? "PARA PERSONAS" : "TODOS LOS FCI";
+      const tipo = extracted(rawFunds);
       const isYTD = scriptTag.id.includes("ytd");
 
       let variationKey;
