@@ -22,6 +22,7 @@ COL_PLAZO_LIQ = "Plazo Liq._Plazo Liq."
 COL_CODIGO_CLAS = "Código de Clasificación_Código de Clasificación"
 COL_MONEDA_FONDO = "Moneda Fondo_Moneda Fondo"
 COL_MINIMO_INV = "Mínimo de Inversión_Mínimo de Inversión"
+#COL_VARIACION_DIARIA = "Variacion cuotaparte %_31/03/25"
 COL_VARIACION_DIARIA = "Variac. %"
 COL_VARIACION_YTD_REF = "30/12/24"  # Consider renaming if date changes
 
@@ -32,7 +33,6 @@ FONDOS_PLAZO_CERO_MODIFICAR = [
 ]
 CLASE_GENERIC_STR = "Clase"
 CLASE_A_STR = "Clase A"
-MAX_MIN_INVESTMENT_THRESHOLD = 100001
 PLAZO_LIQ_CERO = "0"
 PLAZO_LIQ_UNO = "1"
 PLAZOS_LIQ_PERMITIDOS = {PLAZO_LIQ_CERO, PLAZO_LIQ_UNO}
@@ -102,7 +102,7 @@ def process_raw_xlsx_to_tsv(input_path=FCI_XLSX_PATH, output_path=FCI_TSV_PATH):
     try:
         df = pd.read_excel(input_path, header=None)
         header_top_idx = df[df.eq("Fondo").any(axis=1)].index[0]
-        header_df = df.iloc[header_top_idx : header_top_idx + 2].copy().ffill(axis=0)
+        header_df = df.iloc[header_top_idx: header_top_idx + 2].copy().ffill(axis=0)
         combined_headers = (
             header_df.iloc[0].astype(str) + "_" + header_df.iloc[1].astype(str)
         )
@@ -110,7 +110,7 @@ def process_raw_xlsx_to_tsv(input_path=FCI_XLSX_PATH, output_path=FCI_TSV_PATH):
             "nan_|_nan|nan_nan", "", regex=True
         ).str.strip()
         df.columns = combined_headers
-        df = df.iloc[header_top_idx + 2 :].reset_index(drop=True)
+        df = df.iloc[header_top_idx + 2:].reset_index(drop=True)
 
         # Specific row drop logic from original code
         if len(df) > 9 and 9 in df.index:
@@ -187,16 +187,7 @@ def load_prepared_fci_data(
         return pd.DataFrame()
 
 
-# --- DataFrame Filtering Functions ---
-
-
-def filter_by_min_investment(df, max_amount=MAX_MIN_INVESTMENT_THRESHOLD):
-    if COL_MINIMO_INV not in df.columns:
-        print(f"Warning: Column '{COL_MINIMO_INV}' not found for filtering.")
-        return df
-    return df[df[COL_MINIMO_INV] < max_amount].copy()
-
-
+# --- DataFrame Filtering Functions --
 def filter_by_plazo_liq(df, plazos_allowed=PLAZOS_LIQ_PERMITIDOS):
     if COL_PLAZO_LIQ not in df.columns:
         print(f"Warning: Column '{COL_PLAZO_LIQ}' not found for filtering.")
@@ -226,8 +217,6 @@ def filter_by_money_market(df, include_mm=True):
 
 
 # --- Analysis and Reporting Functions ---
-
-
 def get_top_performing_funds(df, n=TOP_N_COUNT, use_ytd=False):
     performance_col = COL_VARIACION_YTD_REF if use_ytd else COL_VARIACION_DIARIA
     required_cols = [
@@ -314,7 +303,6 @@ def get_us_ytd_inflation(series_id=FRED_SERIES_CPI_US, api_key=FRED_API_KEY):
         fred = Fred(api_key=api_key)
         current_year = datetime.datetime.now().year
         start_date = f"{current_year}-01-01"
-        end_date = datetime.date.today().strftime("%Y-%m-%d")
 
         cpi_data = fred.get_series(series_id, start_date=start_date)
 
@@ -479,6 +467,7 @@ def download_cafci_xlsx(output_filename="fci.xlsx"):
     except Exception as e:
         print(f"Ocurrió un error inesperado: {e}")
         return False
+
 
 @functools.cache
 def actualizar_plazo_liquidacion_fci():

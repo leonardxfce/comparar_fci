@@ -13,7 +13,6 @@ try:
         process_raw_xlsx_to_tsv,
         PLAZO_LIQ_CERO,
         download_cafci_xlsx,
-        actualizar_plazo_liquidacion_fci,
         fix_missing_t0,
     )
 except ImportError:
