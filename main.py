@@ -40,7 +40,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": False,
-            "use_ytd": False,
+            "periodo": 0,
             "filter_mm": False,
             "filter_usd": False,
         },
@@ -49,7 +49,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": False,
-            "use_ytd": False,
+            "periodo": 0,
             "filter_mm": False,
             "filter_usd": True,
         },
@@ -58,7 +58,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": False,
-            "use_ytd": False,
+            "periodo": 0,
             "filter_mm": True,
             "filter_usd": False,
         },
@@ -67,7 +67,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": False,
-            "use_ytd": False,
+            "periodo": 0,
             "filter_mm": True,
             "filter_usd": True,
         },
@@ -76,7 +76,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": False,
-            "use_ytd": True,
+            "periodo": 2,
             "filter_mm": False,
             "filter_usd": False,
         },
@@ -85,7 +85,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": False,
-            "use_ytd": True,
+            "periodo": 2,
             "filter_mm": False,
             "filter_usd": True,
         },
@@ -94,7 +94,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": False,
-            "use_ytd": True,
+            "periodo": 2,
             "filter_mm": True,
             "filter_usd": False,
         },
@@ -103,7 +103,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": False,
-            "use_ytd": True,
+            "periodo": 2,
             "filter_mm": True,
             "filter_usd": True,
         },
@@ -112,7 +112,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": True,
-            "use_ytd": False,
+            "periodo": 0,
             "filter_mm": False,
             "filter_usd": False,
         },
@@ -121,7 +121,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": True,
-            "use_ytd": False,
+            "periodo": 0,
             "filter_mm": False,
             "filter_usd": True,
         },
@@ -130,7 +130,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": True,
-            "use_ytd": False,
+            "periodo": 0,
             "filter_mm": True,
             "filter_usd": False,
         },
@@ -139,7 +139,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": True,
-            "use_ytd": False,
+            "periodo": 0,
             "filter_mm": True,
             "filter_usd": True,
         },
@@ -148,7 +148,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": True,
-            "use_ytd": True,
+            "periodo": 2,
             "filter_mm": False,
             "filter_usd": False,
         },
@@ -157,7 +157,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": True,
-            "use_ytd": True,
+            "periodo": 2,
             "filter_mm": False,
             "filter_usd": True,
         },
@@ -166,7 +166,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": True,
-            "use_ytd": True,
+            "periodo": 2,
             "filter_mm": True,
             "filter_usd": False,
         },
@@ -175,7 +175,7 @@ FILTER_COMBINATIONS = [
     {
         "flags": {
             "filter_clase_a": True,
-            "use_ytd": True,
+            "periodo": 2,
             "filter_mm": True,
             "filter_usd": True,
         },
@@ -186,7 +186,7 @@ FILTER_COMBINATIONS = [
 # --- Core Logic Functions ---
 
 
-def generate_fci_json_for_combination(filter_clase_a, use_ytd, filter_mm, filter_usd):
+def generate_fci_json_for_combination(filter_clase_a, periodo, filter_mm, filter_usd):
     """
     Loads data, applies filters based on flags, and returns top 10 funds as JSON.
 
@@ -212,7 +212,7 @@ def generate_fci_json_for_combination(filter_clase_a, use_ytd, filter_mm, filter
         )  # Assumes default USD currencies from base_refactored
 
     # Get top 10 based on YTD flag
-    top_10_json = get_top_performing_funds(df, use_ytd=use_ytd)
+    top_10_json = get_top_performing_funds(df, periodo=periodo)
     return top_10_json
 
 

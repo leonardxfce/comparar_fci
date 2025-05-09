@@ -22,7 +22,7 @@ COL_PLAZO_LIQ = "Plazo Liq._Plazo Liq."
 COL_CODIGO_CLAS = "Código de Clasificación_Código de Clasificación"
 COL_MONEDA_FONDO = "Moneda Fondo_Moneda Fondo"
 COL_MINIMO_INV = "Mínimo de Inversión_Mínimo de Inversión"
-#COL_VARIACION_DIARIA = "Variacion cuotaparte %_31/03/25"
+COL_VARIACION_MENSUAL = "Variacion cuotaparte %_30/04/25"
 COL_VARIACION_DIARIA = "Variac. %"
 COL_VARIACION_YTD_REF = "30/12/24"  # Consider renaming if date changes
 
@@ -102,7 +102,7 @@ def process_raw_xlsx_to_tsv(input_path=FCI_XLSX_PATH, output_path=FCI_TSV_PATH):
     try:
         df = pd.read_excel(input_path, header=None)
         header_top_idx = df[df.eq("Fondo").any(axis=1)].index[0]
-        header_df = df.iloc[header_top_idx: header_top_idx + 2].copy().ffill(axis=0)
+        header_df = df.iloc[header_top_idx : header_top_idx + 2].copy().ffill(axis=0)
         combined_headers = (
             header_df.iloc[0].astype(str) + "_" + header_df.iloc[1].astype(str)
         )
@@ -110,7 +110,7 @@ def process_raw_xlsx_to_tsv(input_path=FCI_XLSX_PATH, output_path=FCI_TSV_PATH):
             "nan_|_nan|nan_nan", "", regex=True
         ).str.strip()
         df.columns = combined_headers
-        df = df.iloc[header_top_idx + 2:].reset_index(drop=True)
+        df = df.iloc[header_top_idx + 2 :].reset_index(drop=True)
 
         # Specific row drop logic from original code
         if len(df) > 9 and 9 in df.index:
@@ -217,11 +217,17 @@ def filter_by_money_market(df, include_mm=True):
 
 
 # --- Analysis and Reporting Functions ---
-def get_top_performing_funds(df, n=TOP_N_COUNT, use_ytd=False):
-    performance_col = COL_VARIACION_YTD_REF if use_ytd else COL_VARIACION_DIARIA
+def get_top_performing_funds(df, n=TOP_N_COUNT, periodo=0):
+    if periodo == 0:
+        performance_col = COL_VARIACION_DIARIA
+    if periodo == 1:
+        performance_col = COL_VARIACION_MENSUAL
+    if periodo == 2:
+        performance_col = COL_VARIACION_YTD_REF
     required_cols = [
         COL_FONDO,
         COL_VARIACION_DIARIA,
+        COL_VARIACION_MENSUAL,
         COL_VARIACION_YTD_REF,
         COL_MONEDA_FONDO,
         COL_CODIGO_CLAS,

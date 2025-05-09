@@ -1,6 +1,6 @@
 // --- Constants and Configuration ---
 const DATA_KEYS = {
-  //VARIATION_INTD: "Variacion cuotaparte %_31/03/25",
+  //VARIATION_INTD: "Variacion cuotaparte %_30/04/25",
   VARIATION_INTD: "Variac. %",
   VARIATION_YTD: "30/12/24",
   FUND_NAME: "Fondo_Fondo",
