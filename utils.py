@@ -35,8 +35,8 @@ CLASE_GENERIC_STR = "Clase"
 CLASE_A_STR = "Clase A"
 PLAZO_LIQ_CERO = "0"
 PLAZO_LIQ_UNO = "1"
-PLAZOS_LIQ_PERMITIDOS = {PLAZO_LIQ_CERO, PLAZO_LIQ_UNO}
-CURRENCIES_USD = {"USD", "USB"}
+PLAZOS_LIQ_PERMITIDOS = frozenset({PLAZO_LIQ_CERO, PLAZO_LIQ_UNO})
+CURRENCIES_USD = frozenset({"USD", "USB"})
 MONEY_MARKET_CODE = 3
 DEFAULT_CLASSIFICATION_CODE = 100
 TOP_N_COUNT = 10
@@ -102,7 +102,7 @@ def process_raw_xlsx_to_tsv(input_path=FCI_XLSX_PATH, output_path=FCI_TSV_PATH):
     try:
         df = pd.read_excel(input_path, header=None)
         header_top_idx = df[df.eq("Fondo").any(axis=1)].index[0]
-        header_df = df.iloc[header_top_idx : header_top_idx + 2].copy().ffill(axis=0)
+        header_df = df.iloc[header_top_idx: header_top_idx + 2].copy().ffill(axis=0)
         combined_headers = (
             header_df.iloc[0].astype(str) + "_" + header_df.iloc[1].astype(str)
         )
@@ -110,7 +110,7 @@ def process_raw_xlsx_to_tsv(input_path=FCI_XLSX_PATH, output_path=FCI_TSV_PATH):
             "nan_|_nan|nan_nan", "", regex=True
         ).str.strip()
         df.columns = combined_headers
-        df = df.iloc[header_top_idx + 2 :].reset_index(drop=True)
+        df = df.iloc[header_top_idx + 2:].reset_index(drop=True)
 
         # Specific row drop logic from original code
         if len(df) > 9 and 9 in df.index:
@@ -320,7 +320,7 @@ def get_us_ytd_inflation(series_id=FRED_SERIES_CPI_US, api_key=FRED_API_KEY):
         cpi_data = cpi_data.dropna()
         if len(cpi_data) < 2:
             print(
-                f"Insufficient data points ({len(cpi_data)}) for YTD calculation for series {series_id} in {current_year}."
+                f"Insufficient data points ({len(cpi_data)}) for YTD for series {series_id} in {current_year}."
             )
             return None
 
@@ -360,18 +360,11 @@ def get_argentina_financial_indicators():
     results = {}
     try:
         today = datetime.date.today()
-        start_of_year_date = datetime.date(today.year, 1, 1)
-        days_elapsed = (today - start_of_year_date).days + 1
         yesterday_date_str = (today - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
-
-        results["calculation_date"] = today.strftime("%Y-%m-%d")
-        results["days_elapsed_current_year"] = days_elapsed
-        results["reference_date_yesterday"] = yesterday_date_str
-        results["reference_date_start_year_api"] = API_DATE_REF_START_YEAR
 
         # --- US Inflation (YTD) ---
         us_inflation = get_us_ytd_inflation()
-        results["inflacion_usa_ytd_%"] = (
+        results["inflacion_usa_ytd"] = (
             us_inflation if us_inflation is not None else "Error fetching"
         )
 
@@ -395,17 +388,9 @@ def get_argentina_financial_indicators():
                 and start_val_uva != 0
             ):
                 total_inflacion = ((end_val_uva / start_val_uva) - 1) * 100
-                anualizada_inflacion = (
-                    (total_inflacion / days_elapsed) * DAYS_IN_YEAR
-                    if days_elapsed > 0
-                    else 0
-                )
-                results["inflacion_uva"] = {
-                    "ytd_%": round(total_inflacion, 2),
-                    "anualizada_estimada_%": round(anualizada_inflacion, 2),
-                }
+                results["inflacion_uva_ytd"] = round(total_inflacion, 2)
             else:
-                results["inflacion_uva"] = {
+                results["inflacion_uva_ytd"] = {
                     "error": "Missing required UVA data points or start value is zero."
                 }
         else:
@@ -432,15 +417,13 @@ def get_argentina_financial_indicators():
                 and start_val_dolar != 0
             ):
                 total_variacion = ((end_val_dolar / start_val_dolar) - 1) * 100
-                results["variacion_dolar_bolsa_compra_ytd_%"] = round(
-                    total_variacion, 2
-                )
+                results["dolar_bolsa_compra_ytd"] = round(total_variacion, 2)
             else:
-                results["variacion_dolar_bolsa_compra_ytd_%"] = {
+                results["dolar_bolsa_compra_ytd"] = {
                     "error": "Missing required Dolar Bolsa data points or start value is zero."
                 }
         else:
-            results["variacion_dolar_bolsa_compra_ytd_%"] = {
+            results["dolar_bolsa_compra_ytd_%"] = {
                 "error": "Failed to fetch Dolar data from API."
             }
 

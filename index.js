@@ -161,13 +161,13 @@ async function init() {
         if (rawFunds[0]["Moneda Fondo_Moneda Fondo"] === "USD") {
           inflacion = {
             [DATA_KEYS.VARIATION_YTD]:
-              datosFinancierosData["inflacion_usa_ytd_%"],
+              datosFinancierosData["inflacion_usa_ytd"],
             [DATA_KEYS.FUND_NAME]: INFLACION + " USA 🔥",
           };
         } else {
           inflacion = {
             [DATA_KEYS.VARIATION_YTD]:
-              datosFinancierosData.inflacion_uva["ytd_%"],
+              datosFinancierosData["inflacion_uva_ytd"],
             [DATA_KEYS.FUND_NAME]: INFLACION + " UVA 🔥",
           };
         }
